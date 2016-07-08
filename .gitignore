@@ -1,0 +1,9 @@
+/*.sublime-project
+/*.sublime-workspace
+.idea
+composer.lock
+*.log
+/thinkphp
+/nbproject
+/runtime
+/vendor/*
