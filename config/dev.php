@@ -10,6 +10,7 @@
 // +----------------------------------------------------------------------
 
 return [
+	'app_debug'	=> true,
     'database' => [
 	    'type'        => 'mysql',
 	    // 数据库连接DSN配置
@@ -47,4 +48,5 @@ return [
 	    'prefix' => 'sw_',
 	    'expire' => 0,
 	],
+	'show_error_msg' => true,
 ];

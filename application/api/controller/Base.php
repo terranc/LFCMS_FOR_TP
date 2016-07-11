@@ -9,11 +9,11 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace app\api\controller;
+namespace api\controller;
 
 class Base
 {
-    use \app\common\traits\controller\Init;
+    use \common\traits\controller\Init;
     function __construct(){
         $this->run();
         //支持jsonp

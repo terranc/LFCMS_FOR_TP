@@ -88,3 +88,19 @@ function api_return($code = 0, $message = '', $data = null)
         );
     }
 }
+
+
+/**
+  +----------------------------------------------------------
+ * 过滤前后空格以及转换html标签
+  +----------------------------------------------------------
+ * @return string
+  +----------------------------------------------------------
+ */
+function safe_text($str) {
+	if(is_string($str)){
+    	return htmlspecialchars(trim($str));
+	}else{
+		return $str;
+    }
+}

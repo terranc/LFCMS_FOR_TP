@@ -1,5 +1,5 @@
 <?php
-namespace app\api\controller;
+namespace api\controller;
 
 use Overtrue\Socialite\SocialiteManager;
 

@@ -7,23 +7,25 @@
   	<meta name="robots" content="index, follow" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 	<meta http-equiv="mobile-agent" content="format=html5;url={php}echo request()->url(true);{/php}">
-	<title>{block name="title"}{$Think.config.site_name}{/block}</title>
+	<title><php php-block="title">{:config('site_name')}</php></title>
 	<link href="//cdn.bootcss.com/normalize/4.1.1/normalize.min.css" rel="stylesheet">
-	<link rel="shortcut icon" href="__PUBLIC__/images/favicon.ico" />{// 收藏夹图标}
-	{block name="page_style"}{// 页面样式}{/block}
+	<link rel="shortcut icon" href="__PUBLIC__/images/favicon.ico" />
+	<!-- 页面样式 -->
+	<php php-block="page_style"></php>
 	<!--[if lte IE 10]>
 		<script>window.location.href='http://cdn.dmeng.net/upgrade-your-browser.html?referrer='+location.href;</script>
 	<![endif]-->
-	{block name="page_script"}{// 页面脚本}{/block}
+	<!-- 头部脚本 -->
+	<php php-block="header_script"></php>
 </head>
 <body>
 <!-- 头部 -->
-{block name="header"}{include file="public/header" /}{/block}
+<php php-block="header"><php php-include="public/header"></php></php>
 <!-- 主体内容 -->
-{block name="content"}{/block}
+<php php-block="content"></php>
 <!-- 底部 -->
-{block name="footer"}{include file="public/footer" /}{/block}
+<php php-block="footer"><php php-include="public/footer"></php></php>
 </body>
 <!-- 页面脚本 -->
-{block name="script"}{/block}
+<php php-block="script"></php>
 </html>

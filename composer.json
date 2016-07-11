@@ -18,7 +18,9 @@
         "topthink/framework": "*",
         "overtrue/wechat": "^3.0",
         "topthink/think-helper": "dev-master",
-        "overtrue/socialite": ">=1.0.7"
+        "overtrue/socialite": ">=1.0.7",
+        "topthink/think-captcha": "^1.0",
+        "topthink/think-angular": "^1.0"
     },
     "extra": {
         "think-path": "thinkphp"
