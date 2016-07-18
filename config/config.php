@@ -203,17 +203,44 @@ return [
         ],
     ],
     "easywechat"=>[
-        // 前面的appid什么的也得保留哦
-        'app_id' => 'xxxx',
-        // ...
-
-        // payment
+        'debug'  => true,
+        /**
+         * 账号基本信息，请从微信公众平台/开放平台获取
+         */
+        'app_id'  => 'wx33717b4ef804de31',         // AppID
+        'secret'  => '62d1a73eb4c3c141ac0758970d12906e',     // AppSecret
+        'token'   => 'DeadSoul',          // Token
+        'aes_key' => '',                    // EncodingAESKey，安全模式下请一定要填写！！！
+        /**
+         * 日志配置
+         *
+         * level: 日志级别, 可选为：
+         *         debug/info/notice/warning/error/critical/alert/emergency
+         * file：日志文件位置(绝对路径!!!)，要求可写权限
+         */
+        /*'log' => [
+            'level' => 'debug',
+            'file'  => '/tmp/easywechat.log',
+        ],*/
+        /**
+         * OAuth 配置
+         *
+         * scopes：公众平台（snsapi_userinfo / snsapi_base），开放平台：snsapi_login
+         * callback：OAuth授权完成后的回调页地址
+         */
+        'oauth' => [
+            'scopes'   => ['snsapi_userinfo'],
+            //具体callback根据当时目录来
+            'callback' => 'lfcms_for_tp/public/index.php/home/Oauth/oauthLogin',
+        ],
+        /**
+         * 微信支付
+         */
         'payment' => [
             'merchant_id'        => 'your-mch-id',
             'key'                => 'key-for-signature',
             'cert_path'          => 'path/to/your/cert.pem', // XXX: 绝对路径！！！！
             'key_path'           => 'path/to/your/key',      // XXX: 绝对路径！！！！
-            'notify_url'         => '默认的订单回调地址',       // 你也可以在下单时单独设置来想覆盖它
             // 'device_info'     => '013467007045764',
             // 'sub_app_id'      => '',
             // 'sub_merchant_id' => '',
