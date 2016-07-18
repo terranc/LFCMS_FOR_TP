@@ -16,10 +16,10 @@ class Index extends Base
 	}
 
 	function test () {
-        if (empty(session('userInfo'))) {
+        if (empty(cookie('userInfo'))) {
             return oauthRedirect();
         } else {
-            dump(session('userInfo'));
+            dump(cookie('userInfo'));
             return '123';
         }
     }
