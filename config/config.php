@@ -202,7 +202,7 @@ return [
             'redirect' => think\Request::instance()->domain() . '/api/index/callback/case/wechat',
         ],
     ],
-    "easywechat"=>[
+    "wechat"=>[
         'debug'  => true,
         /**
          * 账号基本信息，请从微信公众平台/开放平台获取

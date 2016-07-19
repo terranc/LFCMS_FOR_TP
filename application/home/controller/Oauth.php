@@ -13,7 +13,7 @@ class Oauth extends Controller{
 
     public function oauthLogin () {
         //多公众号解决方案，根据token调取不同配置文件，进行授权回调
-        $config = config('easywechat');
+        $config = config('wechat');
         $app = new Application($config);
 
         $oauth = $app->oauth;

@@ -95,16 +95,14 @@ function api_return($code = 0, $message = '', $data = null)
  * 用于微信网页授权登陆
  */
 function oauthRedirect ($token = null) { //多公众号解决方案,根据token调取不同配置文件
-    $request = request();
-    $controller = $request->controller();
-    $action = $request->action();
-    $url = $controller . '/' . $action;
+
+    $url = input('server.REQUEST_URI');
     cookie('callback_url',$url);
 
-    $config = config('easywechat');
+    $config = config('wechat');
     $app = new \EasyWeChat\Foundation\Application($config);
     $oauth = $app->oauth;
-    return $oauth->redirect();//TODO 跳转时会有部分输出
+    return $oauth->redirect();
 }
 
 
