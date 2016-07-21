@@ -67,6 +67,23 @@ Class Material {
         return $return;
     }
 
+    public function materialDel ($media_id) {
+        try {
+            $this->material->delete($media_id);
+
+            $return = ['status' => 0];
+        } catch (Exception $e) {
+            $errCode = $e->getCode();
+            $error   = new Error($errCode);
+
+            $return = [
+                'status'  => $errCode,
+                'message' => $error->getMsg()
+            ];
+        }
+
+        return $return;
+    }
 
     private function articleHandle ($data) {
         if (!empty($data ['title'])) {
