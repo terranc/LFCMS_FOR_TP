@@ -20,8 +20,11 @@
         "topthink/think-helper": "dev-master",
         "overtrue/socialite": ">=1.0.7",
         "topthink/think-captcha": "^1.0",
-        "topthink/think-angular": "^1.0",
-        "topthink/think-migration": "^1.0"
+        "topthink/think-migration": "^1.0",
+        "shenfakuan/thinkextend": "dev-master",
+        "topthink/think-installer": "^1.0",
+        "topthink/think-image": "^1.0",
+        "topthink/think-queue": "dev-master"
     },
     "extra": {
         "think-path": "thinkphp"

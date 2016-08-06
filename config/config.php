@@ -11,6 +11,9 @@
 // $Id$
 error_reporting(E_ERROR | E_PARSE );
 return [
+    // 应用命名空间
+    'app_namespace'          => 'app',
+    // 应用调试模式
     'app_debug'             => false,
     // 应用模式状态
     'app_status'             => 'dev',
