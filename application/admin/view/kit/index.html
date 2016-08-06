@@ -1,0 +1,391 @@
+{extend name="public/layout" /}
+{block name="content"}
+  {php}
+  $map = array(
+    'UI Kit' => 'kit',
+    '示例' => '',
+  );
+  {/php}
+  {include file="Public:header_inner" /}
+  <div class="outwrap">
+    {include file="Public:menu" curr="sys" /}
+    <div class="main">
+      {include file="Public:nav_map" /}
+      <div class="tabs">
+        <a href="" class="curr">标签页1</a>
+        <a href="">标签页2</a>
+      </div>
+      <div class="tip">
+        <i class="fa fa-search"></i>
+        <div class="ext">
+          <button class="btn btn_red">停用</button>
+        </div>
+        <div class="inner">
+          <h4>提示标题</h4>
+          <p>我是Tips我是Tips我是Tips我是Tips我是Tips我是Tips我是Tips我是Tips我是Tips我是Tips我是Tips我是Tips我是Tips我是Tips我是Tips我是Tips我是Tips我是Tips我是Tips我是</p>
+        </div>
+      </div>
+      <form class="list_filter" action="">
+        <div class="item">
+          <label>车系</label>
+          <div>
+            <a href="">全部</a>
+            <a href="">帕萨特</a><a href="" class="curr">新途观</a><a href="">途安</a><a href="">新朗逸</a><a href="">朗行</a><a href="">朗境</a><a href="">Cross Polo</a><a href="">New Polo</a><a href="">Polo GTI</a><a href="">新桑塔纳</a><a href="">途锐</a><a href="">迈特威</a><a href="">凯路威</a><a href="">夏朗</a><a href="">新尚酷</a>
+          </div>
+        </div>
+        <div class="item">
+          <label>年份</label>
+          <div>
+            <a href="" class="curr">全部</a>
+            <a href="">2015</a><a href="">2014</a>
+          </div>
+        </div>
+        <div class="item">
+          <label>状态</label>
+          <div><select class="select " id="" name="filter_status"><option value="">全部</option><option value="0">待审核</option><option value="1">已审核</option><option value="2">冻结</option><option value="3">封停</option></select></div>
+        </div>
+        <div class="item">
+          <label>操作模块</label>
+          <select name="filter_tb_name" class="select">
+            <option value="">全部</option>
+            <volist name="filter_list.tb_name" id="vo">
+              <option value="{$key}" <eq name="key" value="$filter.tb_name">selected</eq>>{$vo}</option>
+            </volist>
+          </select>
+        </div>
+        <div class="item">
+          <label>操作员</label>
+          <input type="text" class="text" name="keyword_value" placeholder="请输入操作员账号.." />
+        </div>
+        <div class="item">
+          <label>注册时间</label>
+          <input type="date" name="filter_start_add_time" class="text text_date" value="2016-01-01" placeholder="开始时间.." autocomplete="off">
+          <ins>至</ins>
+          <input type="date" name="filter_end_add_time" class="text text_date" value="2016-01-31" placeholder="结束时间.." autocomplete="off">
+        </div>
+        <div class="footer">
+          <button type="submit" class="btn">搜索</button>
+        </div>
+      </form>
+      <div class="list_tool">
+        <a href="javascript:;"  class="btn">添加文章</a>
+        <a href="javascript:;"  class="btn">导入</a>
+        <form>
+          <input type="text" class="text" name="keyword_value" placeholder="标题..." value="">
+          <input type="hidden" name="keyword_field" value="title%">
+          <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      <form class="form">
+        <table class="list" width="100%">
+          <thead>
+            <tr>
+              <th width="30" class="mobile_hidden">
+                <input type="checkbox" id="check_all" class="checkbox check_all" data-wrap=".form">
+                <label for="check_all" class="checkbox"></label>
+              </th>
+              <th class="mobile_hidden" width="60">
+                <a href="" class="sort">日志ID</a>
+              </th>
+              <th>操作人</th>
+              <th class="mobile_hidden" width="50">动作</th>
+              <th class="mobile_hidden">操作模块</th>
+              <th class="mobile_hidden">操作记录</th>
+              <th width="150">
+                <a href="" class="sort">操作时间</a>
+              </th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mobile_hidden">
+                <input type="checkbox" name="a[]" id="cb_0" class="checkbox">
+                <label for="cb_0" class="checkbox"></label>
+              </td>
+              <td class="mobile_hidden">2202</td>
+              <td>admin</td>
+              <td class="mobile_hidden">更新</td>
+              <td class="mobile_hidden">后台权限组</td>
+              <td class="mobile_hidden">19</td>
+              <td>2016-04-05 22:39:10</td>
+              <td>
+                <a href="/lfcms/admin_logs/detail/log_id/2202.html">查看明细</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="mobile_hidden">
+                <input type="checkbox" name="a[]" id="cb_1" class="checkbox">
+                <label for="cb_1" class="checkbox"></label>
+              </td>
+              <td class="mobile_hidden">2201</td>
+              <td>admin</td>
+              <td class="mobile_hidden">添加</td>
+              <td class="mobile_hidden">后台权限组</td>
+              <td class="mobile_hidden">19</td>
+              <td>2016-04-05 12:11:36</td>
+              <td>
+                <a href="/lfcms/admin_logs/detail/log_id/2201.html">查看明细</a>
+              </td>
+            </tr>     
+          </tbody>
+          <tfoot class="mobile_hidden">
+            <tr>
+              <td colspan="8">
+                <select class="select">
+                  <option value="">请选择..</option>
+                  <option value="">批量删除</option>
+                  <option value="">批量审核</option>
+                </select>
+                <button type="submit" class="btn">全部结算</button>
+                <span class="silver">注：请注意</span>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </form>
+      <div class="data_stat">
+        <span>汇总金额：<var>￥1000.00</var></span>
+        <span>总人数：<var>300</var></span>
+      </div>
+      <div class="pager">{$page}</div>
+      <form>
+        <table class="edit">
+          <tbody>
+            <tr>
+              <td class="label" width="120">* 账号</td>
+              <td>
+                <input type="text" name="username" class="text" value="admin">
+              </td>
+            </tr>
+            <tr>
+              <td class="label">* 权限组</td>
+              <td>
+                <select name="group_id" class="select">
+                  <option value="">请选择...</option>
+                  <option value="11" selected="">超级管理员</option>
+                  <option value="19">编辑</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td class="label">联系电话</td>
+              <td>
+                <input type="tel" name="mobilephone" class="text" value="15070012431">
+              </td>
+            </tr>
+            <tr>
+              <td class="label">头像</td>
+              <td>
+                <p>
+                  <img src="__PUBLIC__/images/logo.png"  width="150">
+                </p>
+                <input type="file" name="file" class="file">
+              </td>
+            </tr>
+            <tr>
+              <td class="label">新密码</td>
+              <td>
+                <input type="password" name="password" class="text" placeholder="(不修改请留空)" data-rule="length(6~20)" data-tip="（请输入6-20位字符，不能包含空格）">
+              </td>
+            </tr>
+            <tr>
+              <td class="label">确认密码</td>
+              <td>
+                <input type="password" name="repassword" class="text" data-rule="确认密码:match(password);">
+              </td>
+            </tr>
+            <tr>
+              <td class="label">性别</td>
+              <td>
+                <input type="radio" name="c" id="eb_0" class="radio">
+                <label for="eb_0" class="radio">男</label>
+                <input type="radio" name="c" id="eb_1" class="radio" checked />
+                <label for="eb_1" class="radio">女</label>
+              </td>
+            </tr>
+            <tr>
+              <td class="label">是否置顶？</td>
+              <td>
+                <input type="checkbox" name="b" id="db_0" class="checkbox" checked />
+                <label for="db_0" class="checkbox"></label>
+              </td>
+            </tr>
+            <tr>
+              <td class="label top">简介</td>
+              <td>
+                <textarea name="textarea" rows="4" class="textarea"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="label top">内容</td>
+              <td>
+                <textarea name="textarea" id="content" rows="8" class="textarea"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td class="label">最后登录时间</td>
+              <td>13分钟前</td>
+            </tr>         
+            <tr>
+              <td></td>
+              <td>
+                <button type="submit" class="btn">保存</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <h1>Button：</h1>
+      <p>
+        <button class="btn">保存</button>
+        <button class="btn btn_silver">取消</button>
+        <button class="btn btn_disabled" disabled>禁用</button>
+        <button class="btn btn_red">红色</button>
+        <button class="btn btn_green">绿色</button>
+      </p>
+      <p>
+        <button class="btn btn_large">大按钮</button>
+        <button class="btn">中按钮</button>
+        <button class="btn btn_small">小按钮</button>
+      </p>
+      <h1>A Button：</h1>
+      <p>
+        <a class="btn">保存</a>
+        <a class="btn btn_silver">取消</a>
+        <a class="btn btn_disabled" disabled>禁用</a>
+        <a class="btn btn_red">红色</a>
+        <a class="btn btn_green">绿色</a>
+      </p>
+      <p>
+        <a class="btn btn_large">大按钮</a>
+        <a class="btn">中按钮</a>
+        <a class="btn btn_small">小按钮</a>
+      </p>
+      <h1>表单提交按钮组：</h1>
+      <div class="form_console">
+        <button type="submit" class="btn">保存</button>
+        <button type="reset" class="btn btn_silver">重置</button>
+      </div>
+      <h1>Icon：</h1>
+      <span class="icon" style="background-color: #eee; width: 48px; height: 48px; "></span>
+      <h1>Notice && Width：</h1>
+      <div class="notice_box mbottom">
+        这是通知框
+      </div>
+      <div class="notice_box w100 mbottom">
+        这是通知框100px
+      </div>
+      <div class="notice_box w200 mbottom">
+        这是通知框200px
+      </div>
+      <div class="notice_box w300 mbottom">
+        这是通知框300px
+      </div>
+      <div class="notice_box w400 mbottom">
+        这是通知框400px
+      </div>
+      <div class="notice_box wfull mbottom">
+        这是通知框100%
+      </div>
+      <h1>Dropdown：</h1>
+      <select id="select" class="select">
+        <option value="">请选择...</option>
+        <option value="选项一">选项一</option>
+        <option value="选项二">选项二</option>
+        <option value="选项三选项三">选项三选项三选项三选项三选项三选项</option>
+      </select>
+      <h1>Bubble：</h1>
+      <div class="relative w200" style="border:1px solid #ccc; padding: 15px;">
+        <div class="arrow layer_arrow l_arrow_up"><i></i></div>
+        <div class="arrow layer_arrow l_arrow_down"><i></i></div>
+        <div class="arrow layer_arrow l_arrow_left"><i></i></div>
+        <div class="arrow layer_arrow l_arrow_right"><i></i></div>
+        箭头气泡箭头气泡箭头气泡箭头气泡箭头气泡箭头气泡箭头气泡箭头气泡箭头气泡箭头气泡箭头气泡箭头气泡箭头气泡箭头气泡
+      </div>
+      <h1>Dialog：</h1>
+      <div class="dialog " style="max-width: 100%;width: 400px; position: static;">
+          <div class="d_layout"></div>
+          <div class="d_main">
+              <div class="d_header">
+                  <div class="d_header_tl"></div>
+                  <div class="d_header_tr"></div>
+                  <h4 class="title">提示</h4>
+                  <div class="options">
+                    <a href="javascript:void(0)" class="icon btn_close" title="关闭"></a>
+                  </div>
+              </div>
+              <div class="d_body">
+                  <div class="d_content">
+                      我是对话框
+                  </div>
+              </div>
+              <div class="d_footer" style="display: block;">
+                  <button class="btn fbold" type="button">确定</button>
+                  <button class="btn btn_silver" type="button">取消</button>
+              </div>
+          </div>
+      </div>
+      <h1>水平线：</h1>
+      <div class="hline"></div>
+      <h1>竖线：</h1>
+      <div class="vline" style="height:100px;"></div>
+      <h1>间隔线：</h1>
+      阿四大打算的<span class="gapline"></span>啊撒打算打
+      <h1>文本：</h1>
+      <h1>h1</h1>
+      <h2>h2</h2>
+      <h3>h3</h3>
+      <h4>h4</h4>
+      <p>
+        段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落段落
+      </p>
+      <p>
+        <del class="del">删除线删除线删除线删除线删除线</del>
+      </p>
+      <h1>Loading：</h1>
+      <div class="loading_bar w300"></div>
+      <h1>角标：</h1>
+      <span class="count_mark">9</span>
+      <span class="count_mark">99</span>
+      <span class="count_mark">999</span>
+      <h1>List：</h1>
+      <ul class="list w200">
+        <li class="item">
+          <a href="">标题标题标题标题标题标题标题标题标题标题标题标题</a>
+        </li>
+        <li class="item">
+          <a href="">标题标题标题标题标题标题</a>
+        </li>
+        <li class="item">
+          <a href="">标题标题标题标题标题标题</a>
+        </li>
+        <li class="item">
+          <a href="">标题标题标题标题标题标题</a>
+        </li>
+        <li class="item">
+          文字文字文字文字文字文字文字
+        </li>
+      </ul>
+      <ol class="list w200">
+        <li class="item">
+          <a href="">标题标题标题标题标题标题标题标题标题标题标题标题</a>
+        </li>
+        <li class="item">
+          <a href="">标题标题标题标题标题标题</a>
+        </li>
+        <li class="item">
+          <a href="">标题标题标题标题标题标题</a>
+        </li>
+        <li class="item">
+          <a href="">标题标题标题标题标题标题</a>
+        </li>
+        <li class="item">
+          文字文字文字文字文字文字文字
+        </li>
+      </ul>
+    </div>
+  </div>
+{/block}
+{block name="script"}
+{/block}

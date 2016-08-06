@@ -1,0 +1,4 @@
+
+<div class="nav_map">
+  <a href="/{:array_flip(config('URL_MODULE_MAP'))[strtolower(MODULE_NAME)]}">{$Think.config.SITE_NAME}</a><volist name="map" id="vo"><i>-</i><empty name="vo">{$key}<else/><a href="{:url($vo)}">{$key}</a></empty></volist>
+</div>

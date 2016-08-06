@@ -1,0 +1,21 @@
+<div class="header_wrap">
+  <div class="header">
+    <a href="{{:url('main/index')}}" class="logo ir"><img src="__PUBLIC__/images/logo.png">{{$wechat.wechat_name}}</a>
+    <span class="text"> · 管理后台</span>
+    <a href="javascript:;" class="cd_nav_trigger"><span></span></a>
+    <div class="console">
+      你好，{{$admin.username}}！
+      <a href="{{:url('profile/edit')}}" class="item">修改资料</a>
+      <a href="{{:url('index/logout')}}" class="confirm item" title="确认要退出吗？">退出</a>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function(){
+    $('.cd_nav_trigger').on('touchend', function() {
+      $(this).toggleClass('nav_is_visible');
+      $('.sidebar').toggle();
+      $('.main').toggle();
+    })
+  })
+</script>

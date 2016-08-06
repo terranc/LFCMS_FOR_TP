@@ -9,6 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 // $Id$
+error_reporting(E_ERROR | E_PARSE );
 return [
     // 应用命名空间
     'app_namespace'          => 'app',
