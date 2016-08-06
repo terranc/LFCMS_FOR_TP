@@ -16,7 +16,7 @@ return [
 	    // 数据库连接DSN配置
 	    'dsn'         => '',
 	    // 服务器地址
-	    'hostname'    => 'dev.lookfeel.co',
+	    'hostname'    => 'localhost',
 	    // 数据库名
 	    'database'    => 'lfcms',
 	    // 数据库用户名

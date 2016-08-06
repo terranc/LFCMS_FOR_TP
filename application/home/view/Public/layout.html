@@ -7,25 +7,25 @@
   	<meta name="robots" content="index, follow" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 	<meta http-equiv="mobile-agent" content="format=html5;url={php}echo request()->url(true);{/php}">
-	<title><php php-block="title">{:config('site_name')}</php></title>
+	<title>{block name="title"}{:config('site_name')}{/block}</title>
 	<link href="//cdn.bootcss.com/normalize/4.1.1/normalize.min.css" rel="stylesheet">
 	<link rel="shortcut icon" href="__PUBLIC__/images/favicon.ico" />
 	<!-- 页面样式 -->
-	<php php-block="page_style"></php>
+	{block name="page_style"}{/block}
 	<!--[if lte IE 10]>
 		<script>window.location.href='http://cdn.dmeng.net/upgrade-your-browser.html?referrer='+location.href;</script>
 	<![endif]-->
 	<!-- 头部脚本 -->
-	<php php-block="header_script"></php>
+	{block name="header_script"}{/block}
 </head>
 <body>
 <!-- 头部 -->
-<php php-block="header"><php php-include="public/header"></php></php>
+{block name="header"}{include file="public/header" /}{/block}
 <!-- 主体内容 -->
-<php php-block="content"></php>
+{block name="content"}{/block}
 <!-- 底部 -->
-<php php-block="footer"><php php-include="public/footer"></php></php>
+{block name="footer"}{include file="public/footer" /}{/block}
 </body>
 <!-- 页面脚本 -->
-<php php-block="script"></php>
+{block name="script"}{/block}
 </html>

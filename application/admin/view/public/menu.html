@@ -1,0 +1,57 @@
+<div class="sidebar">
+  <dl class="menu">
+    <if condition="$Think.config.CHECK_SWITCH eq 1 AND auth_check('article/examine')">
+      <dt class="clickable"><a href="{:url('article/examine')}"><i class="icon fa fa-list"></i>待审核</a></dt>
+    </if>
+    <volist name="menu_list" id="vo">
+      <eq name="vo.type_id" value="0">
+        <empty name="vo.sub">
+          <if condition="auth_check($vo['url'])">
+            <dt class="clickable"><a href="{$vo.url|url}" id="page_about"><i class="icon fa fa-{$vo.icon}"></i>{$vo.title}</a></dt>
+          </if>
+        <else />
+          <if condition="auth_check(array_column($vo['sub'],'url'))">
+          <dt class="expand"><i class="icon fa fa-{$vo.icon}"></i>{$vo.title}<span class="arrow"></span></dt>
+          <dd>
+            <ul>
+              <volist name="vo.sub" id="so">
+              <if condition="auth_check($so['url'])">
+              <li>
+                <a href="{$so.url|url}">{$so.title}</a>
+              </li>
+              </if>
+              </volist>
+            </ul>
+          </dd>
+          </if>
+        </empty>
+      <else/>
+        <if condition="category_check(array_column($vo['category'],'category_id')) OR $vo['sub']">
+        <dt class="expand"><i class="icon fa fa-{$vo.icon}"></i>{$vo.title}<span class="arrow"></span></dt>
+        <dd>
+          <ul>
+            <volist name="vo.category" id="co">
+            <if condition="category_check($co['category_id'])">
+            <li>
+              <a href="{:url('article/lists',array('category_id' => $co['category_id']))}" id="category_{$co.category_id}">{$co.title}</a>
+            </li>
+            </if>
+            </volist>
+            <volist name="vo.sub" id="so">
+            <li>
+              <a href="{$so.url|url}">{$so.title}</a>
+            </li>
+            </volist>
+          </ul>
+        </dd>
+        </if>
+      </eq>
+    </volist>
+  </dl>
+</div>
+
+<script>
+    $(function(){
+      $('#[curr]').addClass('active').closest('dd').prev('dt').addClass('expand');
+  });
+</script>

@@ -9,6 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 // $Id$
+error_reporting(E_ERROR | E_PARSE );
 return [
     'app_debug'             => false,
     // 应用模式状态
@@ -94,7 +95,7 @@ return [
     // +----------------------------------------------------------------------
     'template'               => [
         // 模板引擎类型 支持 php think 支持扩展
-        'type'         => 'Angular',
+        'type'         => 'Think',
         // 模板路径
         'view_path'    => '',
         // 模板后缀

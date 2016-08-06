@@ -1,0 +1,306 @@
+@media screen and (max-width: 414px) {
+	html {
+		position: relative;
+		width: 100%;
+		min-height: 100%;
+	}
+
+	input,
+	textarea,
+	button {
+		appearance: none;
+	}
+	.select{
+		width: 100%;
+	}
+
+	.wrapper,
+	.wrapper .header_wrap,
+	.wrapper .outwrap {
+		width: 100%;
+		min-width: inherit;
+		box-sizing: border-box;
+	}
+
+	.mobile_hidden {
+		display: none;
+	}
+
+	.body_login .container form {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0;
+		margin-top: 0;
+		padding: 0 15px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	.body_login form .login_input {
+		width: 100%;
+	}
+
+	.body_login .login_input .label {
+		width: 3em;
+		padding: 0;
+	}
+
+	.body_login .login_input .w300 {
+		width: 100%;
+	}
+
+	.wrapper .outwrap {
+		margin-bottom: 0;
+	}
+
+	.wrapper .header_wrap {
+		margin-bottom: 15px;
+		border-top-width: 2px;
+	}
+
+	.header {
+		width: 100%;
+		height: auto;
+		padding: 0 15px;
+		box-sizing: border-box;
+	}
+
+	.header .logo,
+	.header .text {
+		display: none;
+	}
+
+	.header .console {
+		line-height: 44px;
+	}
+
+	.header .cd_nav_trigger {
+		float: left;
+	    position: relative;
+	    display: block;
+	    width: 34px;
+	    height: 44px;
+	    margin-right: 5%;
+	    overflow: hidden;
+	    white-space: nowrap;
+	    color: transparent;
+	}
+
+	.header .cd_nav_trigger span {
+		position: absolute;
+	    top: 50%;
+	    right: 5px;
+	    margin-top: -2px;
+	    -webkit-transition: background 0.2s;
+	    -moz-transition: background 0.2s;
+	    transition: background 0.2s;
+	}
+
+	.cd_nav_trigger span, 
+	.cd_nav_trigger span::before, 
+	.cd_nav_trigger span::after {
+		position: absolute;
+	    display: inline-block;
+	    height: 3px;
+	    width: 24px;
+	    background: #38943c;
+	}
+
+	.cd_nav_trigger span::before, 
+	.cd_nav_trigger span::after {
+		content: '';
+	    right: 0;
+	    transform: translateZ(0);
+	    backface-visibility: hidden;
+	    transform-origin: 0% 50%;
+	    transition: transform 0.2s;
+	}
+
+	.cd_nav_trigger span::before {
+		top: -6px;
+	}
+
+	.cd_nav_trigger span::after {
+		top: 6px;
+	}
+
+	.cd_nav_trigger.nav_is_visible span {
+		background: rgba(255, 255, 255, 0);
+	}
+
+	.cd_nav_trigger.nav_is_visible span::before, 
+	.cd_nav_trigger.nav_is_visible span::after {
+		background: #38943c;
+	}
+
+	.cd_nav_trigger.nav_is_visible span::before {
+	    transform: translateX(4px) translateY(-3px) rotate(45deg);
+	}
+
+	.cd_nav_trigger.nav_is_visible span::after {
+	    transform: translateX(4px) translateY(2px) rotate(-45deg);
+	}
+
+	.sidebar {
+		position: absolute;
+		display: none;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		margin-top: 59px;
+		margin-bottom: 0;
+		box-sizing: border-box;
+		width: 100%;
+	}
+
+	.sidebar .menu dt {
+		background-color: #fcfcfc;
+	}
+
+	.outwrap .main {
+		display: block;
+		width: 100%;
+		padding: 0 15px 20px;
+		box-sizing: border-box;
+	}
+
+	.main table.edit tr,
+	.main table.edit td,
+	.body_login table.edit td {
+		display: block;
+	}
+	.main table.edit .label{
+		padding: 10px 0 0;
+	}
+	.main table.edit td{
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.main table.edit .label,
+	.body_login table.edit .label {
+		text-align: left;
+	}
+
+	.main table.edit .label:after {
+		content: ':';
+	}
+
+	.main table.edit tr:first-child .label {
+		margin-top: 0;
+	}
+
+	.main table.edit tr:last-child .label:after {
+		content: none;
+	}
+
+	.main table.edit input.text,
+	.main table.edit input.file,
+	.main table.edit .textarea,
+	.main table.edit .textarea .edui-editor {
+		width: 100% !important;
+		box-sizing: border-box;
+	}
+	.main table.edit .textarea .edui-editor{
+		overflow: scroll;
+	}
+
+	.main table.edit .edui-editor-toolbarbox {
+		display: none;
+	}
+
+	.main table.edit .btn {
+		width: 100%;
+		box-sizing: border-box;
+		line-height: 30px;
+	}
+
+	.main table.edit .btn + .btn{
+		margin-top: 10px;
+	}
+
+	.main .list_tool .text {
+		width: 100%;
+	}
+
+	.main .list_tool button.btn {
+		margin-left: -30px;
+		border-left: 1px solid #e2e2e2;
+	}
+
+	.main .list_tool a.btn {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.main table.edit tbody ~ tbody tr:first-child td.label {
+		padding-top: 20px;
+	}
+
+	.main table.list {
+		table-layout: auto;
+	}
+
+	.main .list tr td:last-child a {
+		display: inline-block;
+		min-width: 2em;
+	}
+
+	.main .list tr td:last-child a+a {
+		margin-top: 10px;
+	}
+
+	.main table img {
+		width: 80px;
+	}
+
+	.list_tool form {
+		float: none;
+	}
+
+	.list_tool form + .btn {
+		margin-top: 20px;
+	}
+
+	.list_filter .item {
+		display: block;
+	}
+
+	.list_filter .item label {
+		display: block;
+		text-align: left;
+		float: none;
+	}
+
+	.list_filter .item label:after {
+		content: ':';
+	}
+
+	.list_filter .item input {
+		width: 100%;
+	}
+
+	.list_filter .footer {
+		padding-left: 0;
+		display: flex;
+	}
+
+	.list_filter .footer .btn {
+	    flex: 1;
+	}
+
+	.list_filter .item ins{
+		display: none;
+	}
+	.list_filter .item input.text ~ input{
+		margin-top: 10px;
+	}
+	.pager span {
+		display: none;
+	}
+	.dropdown,
+	.dropdown .dropselectbox ul{
+		width: 100% !important;
+	}
+}
